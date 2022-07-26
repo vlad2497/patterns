@@ -1,0 +1,49 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "airbnb",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".tsx"] }
+    ],
+    "import/extensions": "off", // разрешаем не указывать расширение файла при импорте
+    "react/react-in-jsx-scope": "off", // разрешаем не использовать импорт React
+    "react/self-closing-comp": "off", // разрешаем не использовать обязательно самозакрывающийся тег
+    "import/no-unresolved": "off", // разрешаем абсолютные импорты
+    "no-param-reassign": "off", // разрешаем изменение параметров функции (для actions redux)
+    "arrow-body-style": "off", // разрешаем определять компоненты в виде стрелочных функций
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "import/prefer-default-export": "off", //разрешаем не только дефолтный экспорт при наличии одного экспорта в файле
+    "react/jsx-props-no-spreading": "off", //разрешаем spread оператор для реакт компонентов
+    "react/require-default-props": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"]
+  }
+}
