@@ -7,7 +7,8 @@ export class MovieFactory {
   create(movieData: MovieType) {
     return new MovieModel(
       TypesValidator.isNumber(movieData?.id) ? movieData.id : 0,
-      TypesValidator.isString(movieData?.title) ? movieData.title : ''
+      TypesValidator.isString(movieData?.title) ? movieData.title : '',
+      TypesValidator.isArray(movieData?.genre_ids) ? movieData.genre_ids : []
     )
   }
 }

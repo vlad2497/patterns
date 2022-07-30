@@ -15,7 +15,7 @@ export const moviesApi = createApi({
       }),
       transformResponse: (response: { results: MovieType[] }) => {
         const movieFactory = new MovieFactory()
-        return Array.isArray(response.results)
+        return Array.isArray(response?.results)
           ? response.results.map((movie) => movieFactory.create(movie))
           : []
       },

@@ -44,6 +44,7 @@
     "react/jsx-props-no-spreading": "off", //разрешаем spread оператор для реакт компонентов
     "react/require-default-props": "off",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error"]
+    "@typescript-eslint/no-unused-vars": ["error"], // необходимо для использования описания типов (конкретно параметров функций)
+    "react/jsx-no-useless-fragment": "off" // разрешаем в фрагменте использовать одного ребенка
   }
 }

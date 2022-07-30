@@ -7,7 +7,15 @@ export class MovieFilter {
     this.list = list
   }
 
-  bySearch(searchWord: string): MovieModel[] {
-    return this.list.filter((movie) => movie.getTitle() === searchWord)
+  filterByGenre(genreId: string): MovieModel[] {
+    return genreId === ''
+      ? this.list
+      : this.list.filter((movie) => movie.getGenreIds().includes(+genreId))
+  }
+
+  filterBySearch(searchValue: string): MovieModel[] {
+    return searchValue === ''
+      ? this.list
+      : this.list.filter((movie) => movie.getTitle().includes(searchValue))
   }
 }
