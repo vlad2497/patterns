@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react'
-import { Container } from './styles'
+import logoSrc from 'assets/images/common/logo.svg'
+import { Container, StyledLogo, StyledLogoWithFillColor } from './styles'
 
 type Props = {
   leftSection: ReactNode
@@ -8,10 +9,14 @@ type Props = {
 
 const Header: FC<Props> = ({ leftSection, rightSection }) => {
   return (
-    <Container>
-      {leftSection}
-      {rightSection}
-    </Container>
+    <>
+      <StyledLogo src={logoSrc} alt="logo" />
+      <StyledLogoWithFillColor />
+      <Container>
+        {leftSection}
+        {rightSection}
+      </Container>
+    </>
   )
 }
 
