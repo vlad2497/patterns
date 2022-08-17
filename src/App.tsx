@@ -1,9 +1,10 @@
-import MoviesListFacade from 'view/pages/movies/list/ui'
+import { Routes } from 'react-router-dom'
+import moviesRouter from 'view/pages/movies/router'
 
 const App = () => {
   return (
     <div className="App">
-      <MoviesListFacade />
+      <Routes>{moviesRouter}</Routes>
     </div>
   )
 }

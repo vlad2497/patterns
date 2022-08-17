@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useGetGenresListQuery } from 'store/slices/genre/api'
 import BaseGenreSelect from 'view/components/ui/select/base'
-import MenuItem from 'view/components/ui/menuItem/base'
+import MenuItem from 'view/components/ui/menu-item/base'
 
 type Props = {
   value: string

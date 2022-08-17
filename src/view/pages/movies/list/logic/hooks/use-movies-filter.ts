@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { MovieModel } from 'store/slices/movie/models'
-import { MovieFilter } from '../models/MovieFilter'
+import { MovieFilter } from '../models/movie-filter'
 
 type Props = {
   genre: string

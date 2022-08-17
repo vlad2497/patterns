@@ -1,5 +1,5 @@
 import { MovieModel } from 'store/slices/movie/models'
-import MovieCard from '../children/movieCard/ui'
+import MovieCard from '../children/movie-card/ui'
 
 type Props = {
   movies: MovieModel[]

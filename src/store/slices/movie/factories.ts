@@ -1,4 +1,4 @@
-import { TypesValidator } from 'models/typesValidator'
+import { TypesValidator } from 'models/types-validator'
 import { MovieType } from './types'
 import { MovieModel } from './models'
 

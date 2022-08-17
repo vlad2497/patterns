@@ -1,4 +1,4 @@
-import { TypesValidator } from 'models/typesValidator'
+import { TypesValidator } from 'models/types-validator'
 import { GenreType } from './types'
 import { GenreModel } from './models'
 

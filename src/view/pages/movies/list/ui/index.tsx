@@ -1,14 +1,14 @@
 import { useGetMoviesListQuery } from 'store/slices/movie/api'
-import TextField from 'view/components/ui/textFileld'
+import TextField from 'view/components/ui/text-fileld'
 
 import Header from '../children/header/ui'
-import MoviesList from '../children/moviesList/ui'
+import MoviesList from '../children/movies-list/ui'
 import Title from '../children/header/children/title/ui'
 import Shimmer from '../children/shimmer/ui'
-import useGenreSelect from '../logic/hooks/useGenreSelect'
-import GenreSelect from '../children/genreSelect/ui'
-import useMoviesFilter from '../logic/hooks/useMoviesFilter'
-import useTextFieldSearch from '../logic/hooks/useSearchTextField'
+import useGenreSelect from '../logic/hooks/use-genre-select'
+import GenreSelect from '../children/genre-select/ui'
+import useMoviesFilter from '../logic/hooks/use-movies-filter'
+import useTextFieldSearch from '../logic/hooks/use-search-text-field'
 
 import { Container } from './styles'
 
