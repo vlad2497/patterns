@@ -1,3 +1,5 @@
+import { Typography } from '@mui/material'
+
 import { useGetMoviesListQuery } from 'store/slices/movie/api'
 import TextField from 'view/components/ui/text-fileld'
 
@@ -34,6 +36,12 @@ const MoviesListFacade = () => {
       />
       <GenreSelect value={genreSelectValue} setValue={setGenreSelectValue} />
       <MoviesList movies={filteredMovies} />
+      <Typography variant="h1" color="neutral.green">
+        h1
+      </Typography>
+      <Typography variant="text1" color="neutral.dark">
+        text1
+      </Typography>
     </Container>
   )
 }

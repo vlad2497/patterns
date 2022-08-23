@@ -4,7 +4,7 @@ export class MovieFilter {
   private list: MovieModel[]
 
   constructor(list: MovieModel[]) {
-    this.list = list
+    this.list = [...list]
   }
 
   filterByGenre(genreId: string): MovieModel[] {
