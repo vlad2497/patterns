@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 
 import { useGetMoviesListQuery } from 'store/slices/movie/api'
 import TextField from 'view/components/ui/text-fileld'
@@ -15,6 +16,7 @@ import useTextFieldSearch from '../logic/hooks/use-search-text-field'
 import { Container } from './styles'
 
 const MoviesListFacade = () => {
+  const { t } = useTranslation()
   const { isLoading: isMoviesLoading, data: movies } = useGetMoviesListQuery()
   const { genreSelectValue, setGenreSelectValue } = useGenreSelect()
   const { searchValue, setSearchValue } = useTextFieldSearch()
@@ -29,7 +31,7 @@ const MoviesListFacade = () => {
   return (
     <Container>
       <Header
-        leftSection={<Title>Фильмы</Title>}
+        leftSection={<Title>{t('movies.list.title')}</Title>}
         rightSection={
           <TextField value={searchValue} setValue={setSearchValue} />
         }

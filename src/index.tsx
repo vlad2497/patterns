@@ -4,6 +4,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import { Provider } from 'react-redux'
 import { store } from 'store'
 import theme from 'themes'
+import 'config/i18n'
 import App from './app'
 import './fonts.css'
 
