@@ -1,0 +1,17 @@
+# Fetching the node js image (linux) and set name development
+FROM node:18.13.0 AS development
+
+# Setting up the work directory
+WORKDIR /pattern-app-dev
+
+# Сopies package.json from our local directory to the /pattern-app
+COPY ./package.json ./
+
+# Installing dependencies
+RUN npm install
+
+# Сopies all the files in our local directory to the /pattern-app
+COPY . .
+
+# Starting our application
+CMD npm start
