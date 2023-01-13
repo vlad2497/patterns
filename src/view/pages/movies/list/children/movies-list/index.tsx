@@ -1,5 +1,5 @@
 import { MovieModel } from 'store/slices/movie/models'
-import MovieCard from '../children/movie-card/ui'
+import MovieCard from './children/movie-card'
 import { ElementWithBackgroundImage } from './styles'
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 
 const MoviesList = ({ movies }: Props) => {
   return (
-    <div>
+    <div data-testid="popular-movies-list">
       <ElementWithBackgroundImage />
       {movies.map((movie) => (
         <MovieCard key={movie.getId()} title={movie.getTitle()} />

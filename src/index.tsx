@@ -5,8 +5,12 @@ import { Provider } from 'react-redux'
 import { store } from 'store'
 import theme from 'themes'
 import 'config/i18n'
+// import { worker } from 'mocks/browser'
 import App from './app'
 import './fonts.css'
+
+// Запуск моккера
+// worker.start()
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(

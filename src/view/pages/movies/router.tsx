@@ -1,6 +1,6 @@
 import { Route } from 'react-router-dom'
-import MoviesListFacade from 'view/pages/movies/list/ui'
-import MovieDetailFacade from 'view/pages/movies/detail/ui'
+import MoviesListFacade from 'view/pages/movies/list'
+import MovieDetailFacade from 'view/pages/movies/detail'
 import { moviesDetailRoute, moviesListRoute } from 'config/routes'
 
 export default [

@@ -1,5 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
 import { baseQuery, DEFAULT_QUERY_PARAMS } from 'store/api'
+import endpoints from 'config/api/endpoints'
 import { MovieType } from './types'
 import { MovieModel } from './models'
 import { MovieFactory } from './factories'
@@ -10,7 +11,7 @@ export const moviesApi = createApi({
   endpoints: (builder) => ({
     getMoviesList: builder.query<MovieModel[], void>({
       query: () => ({
-        url: `movie/popular`,
+        url: endpoints.movies.popular,
         params: DEFAULT_QUERY_PARAMS,
       }),
       transformResponse: (response: { results: MovieType[] }) => {
@@ -22,7 +23,7 @@ export const moviesApi = createApi({
     }),
     getMovieById: builder.query<MovieModel, number>({
       query: (id) => ({
-        url: `movie/${id}`,
+        url: endpoints.movies.getDetail(id),
         params: DEFAULT_QUERY_PARAMS,
       }),
     }),

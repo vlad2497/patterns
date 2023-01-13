@@ -22,6 +22,7 @@ const GenreSelect: FC<Props> = ({ value, setValue }) => {
       value={value}
       setValue={setValue}
       disabled={isGenresLoading}
+      data-testid="movies-genre-select"
     >
       {genreMenu}
     </BaseGenreSelect>

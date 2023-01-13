@@ -9,14 +9,14 @@ type Props = {
 
 const Header: FC<Props> = ({ leftSection, rightSection }) => {
   return (
-    <>
+    <div data-testid="movies-page-header">
       <StyledLogo src={logoSrc} alt="logo" />
       <StyledLogoWithFillColor />
       <Container>
         {leftSection}
         {rightSection}
       </Container>
-    </>
+    </div>
   )
 }
 

@@ -1,23 +1,27 @@
-import { Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
 import { useGetMoviesListQuery } from 'store/slices/movie/api'
 import TextField from 'view/components/ui/text-fileld'
 
-import Header from '../children/header/ui'
-import MoviesList from '../children/movies-list/ui'
-import Title from '../children/header/children/title/ui'
-import Shimmer from '../children/shimmer/ui'
-import useGenreSelect from '../logic/hooks/use-genre-select'
-import GenreSelect from '../children/genre-select/ui'
-import useMoviesFilter from '../logic/hooks/use-movies-filter'
-import useTextFieldSearch from '../logic/hooks/use-search-text-field'
+import Header from './children/header'
+import MoviesList from './children/movies-list'
+import Title from './children/header/children/title'
+import Shimmer from './children/shimmer'
+import useGenreSelect from './logic/use-genre-select'
+import useMoviesFilter from './logic/use-movies-filter'
+import useTextFieldSearch from './logic/use-search-text-field'
+import GenreSelect from './children/genre-select'
+import Reload from './children/reload'
 
 import { Container } from './styles'
 
 const MoviesListFacade = () => {
   const { t } = useTranslation()
-  const { isLoading: isMoviesLoading, data: movies } = useGetMoviesListQuery()
+  const {
+    isLoading: isMoviesLoading,
+    data: movies,
+    isError,
+  } = useGetMoviesListQuery()
   const { genreSelectValue, setGenreSelectValue } = useGenreSelect()
   const { searchValue, setSearchValue } = useTextFieldSearch()
   const { filteredMovies } = useMoviesFilter({
@@ -27,6 +31,7 @@ const MoviesListFacade = () => {
   })
 
   if (isMoviesLoading) return <Shimmer />
+  if (isError) return <Reload />
 
   return (
     <Container>
@@ -38,12 +43,6 @@ const MoviesListFacade = () => {
       />
       <GenreSelect value={genreSelectValue} setValue={setGenreSelectValue} />
       <MoviesList movies={filteredMovies} />
-      <Typography variant="h1" color="neutral.green">
-        h1
-      </Typography>
-      <Typography variant="text1" color="neutral.dark">
-        text1
-      </Typography>
     </Container>
   )
 }

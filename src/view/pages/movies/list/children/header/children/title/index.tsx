@@ -6,7 +6,11 @@ type Props = {
 }
 
 const Title: FC<Props> = ({ children }) => {
-  return <Text>{children}</Text>
+  return (
+    <Text variant="h1" color="neutral.dark">
+      {children}
+    </Text>
+  )
 }
 
 export default Title

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from 'react'
 import { MovieModel } from 'store/slices/movie/models'
-import { MovieFilter } from '../models/movie-filter'
+import { MovieFilter } from './movie-filter'
 
 type Props = {
   genre: string
