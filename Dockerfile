@@ -13,6 +13,11 @@ RUN npm install
 # Сopies all the files in our local directory to the /pattern-app
 COPY . .
 
+# Set Env variables
+ENV REACT_APP_BASE_HOST $REACT_APP_BASE_HOST
+ENV REACT_APP_IMAGES_HOST $REACT_APP_IMAGES_HOST
+ENV REACT_APP_API_KEY $REACT_APP_API_KEY
+
 # Building our application
 RUN npm run build
 
