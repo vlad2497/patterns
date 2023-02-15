@@ -14,15 +14,15 @@ RUN npm install
 COPY . .
 
 # Set Env variables
-ENV REACT_APP_BASE_HOST $REACT_APP_BASE_HOST
-ENV REACT_APP_IMAGES_HOST $REACT_APP_IMAGES_HOST
-ENV REACT_APP_API_KEY $REACT_APP_API_KEY
+# ENV REACT_APP_BASE_HOST $REACT_APP_BASE_HOST
+# ENV REACT_APP_IMAGES_HOST $REACT_APP_IMAGES_HOST
+# ENV REACT_APP_API_KEY $REACT_APP_API_KEY
 
 # Building our application
 RUN npm run build
 
-# Fetching the latest nginx image
-FROM nginx
+# Fetching the nginx image
+FROM nginx:1.23.3
 
 # Copying built assets from builder
 COPY --from=builder /pattern-app-prod/build /usr/share/nginx/html
