@@ -8,6 +8,7 @@ import 'config/i18n'
 // import { worker } from 'mocks/browser'
 import App from './app'
 import './fonts.css'
+import './global.css'
 
 // Запуск моккера
 // worker.start()

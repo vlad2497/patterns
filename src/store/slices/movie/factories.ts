@@ -8,7 +8,13 @@ export class MovieFactory {
     return new MovieModel(
       TypesValidator.isNumber(movieData?.id) ? movieData.id : 0,
       TypesValidator.isString(movieData?.title) ? movieData.title : '',
-      TypesValidator.isArray(movieData?.genre_ids) ? movieData.genre_ids : []
+      TypesValidator.isArray(movieData?.genre_ids) ? movieData.genre_ids : [],
+      TypesValidator.isString(movieData?.poster_path)
+        ? movieData.poster_path
+        : '',
+      TypesValidator.isString(movieData?.backdrop_path)
+        ? movieData.backdrop_path
+        : ''
     )
   }
 }

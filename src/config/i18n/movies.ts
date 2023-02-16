@@ -1,12 +1,16 @@
 export default {
   en: {
     list: {
-      title: 'Movies',
+      titlePopular: 'Popular movies',
+      titleRandom: 'Random movies',
+      titleNovelty: 'Novelty',
     },
   },
   ru: {
     list: {
-      title: 'Фильмы',
+      titlePopular: 'Популярные фильмы',
+      titleRandom: 'Случайные фильмы',
+      titleNovelty: 'Новинка',
     },
   },
 }

@@ -1,10 +1,10 @@
 declare module '@mui/material/styles' {
   interface BreakpointOverrides {
-    xs: false
-    sm: false
-    md: false
-    lg: false
-    xl: false
+    xs: true
+    sm: true
+    md: true
+    lg: true
+    xl: true
     mobile: true
     tablet: true
     laptop: true
@@ -15,6 +15,11 @@ declare module '@mui/material/styles' {
 export default {
   breakpoints: {
     values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
       mobile: 0,
       tablet: 640,
       laptop: 1024,

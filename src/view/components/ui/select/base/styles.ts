@@ -2,7 +2,9 @@ import { styled } from '@mui/material/styles'
 import Select from '@mui/material/Select'
 
 export const StyledSelect = styled(Select)(() => ({
-  height: '35px',
+  width: '120px',
+  height: '56px',
+  backgroundColor: '#FF7373',
   borderRadius: '10px',
   '&:focused': {},
 

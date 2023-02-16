@@ -4,7 +4,6 @@ import packageJson from '../package.json'
 
 // eslint-disable-next-line no-console
 console.log('version ', packageJson.version)
-console.log('host', process.env.REACT_APP_BASE_HOST)
 
 const App = () => {
   return (

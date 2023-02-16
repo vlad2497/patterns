@@ -7,7 +7,7 @@ type Props = {
 
 const Title: FC<Props> = ({ children }) => {
   return (
-    <Text variant="h1" color="neutral.dark">
+    <Text variant="h1" color="neutral.black">
       {children}
     </Text>
   )

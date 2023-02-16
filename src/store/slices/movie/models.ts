@@ -5,10 +5,22 @@ export class MovieModel {
 
   private genreIds: number[]
 
-  constructor(id: number, title: string, genreIds: number[]) {
+  private imageSrc: string
+
+  private backdropPath: string
+
+  constructor(
+    id: number,
+    title: string,
+    genreIds: number[],
+    imageSrc: string,
+    backdropPath: string
+  ) {
     this.id = id
     this.title = title
     this.genreIds = genreIds
+    this.imageSrc = imageSrc
+    this.backdropPath = backdropPath
   }
 
   getId(): number {
@@ -21,5 +33,13 @@ export class MovieModel {
 
   getGenreIds(): number[] {
     return this.genreIds
+  }
+
+  getImageSrc(): string {
+    return this.imageSrc
+  }
+
+  getBackdropPath(): string {
+    return this.backdropPath
   }
 }
