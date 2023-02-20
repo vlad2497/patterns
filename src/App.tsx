@@ -1,9 +1,8 @@
 import { Routes } from 'react-router-dom'
 import moviesRouter from 'view/pages/movies/router'
-import packageJson from '../package.json'
 
 // eslint-disable-next-line no-console
-console.log('version ', packageJson.version)
+console.log('version ', process.env.REACT_APP_VERSION)
 
 const App = () => {
   return (
