@@ -20,6 +20,12 @@ const MovieCard: FC<Props> = ({ title, img, aspectRatio }) => {
         backgroundImage: `linear-gradient(0deg, rgba(40, 40, 40, 0.6), rgba(0, 0, 0, 0.3)), ${backgroundImage}`,
         aspectRatio,
       }}
+      initial={{ opacity: 0.4 }}
+      whileInView={{ opacity: 1, transition: { duration: 0.5 } }}
+      whileHover={{
+        scale: 1.1,
+        transition: { duration: 0.5 },
+      }}
     >
       <Title variant="h5" color="neutral.white">
         {title}

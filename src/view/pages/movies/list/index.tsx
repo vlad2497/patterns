@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Box, Grid } from '@mui/material'
+import { motion } from 'framer-motion'
 
 import { useGetMoviesListQuery } from 'store/slices/movie/api'
 import TextField from 'view/components/ui/text-fileld'
@@ -44,14 +45,26 @@ const MoviesListFacade = () => {
       <Content>
         {movies && (
           <Box mt="35px" mb="25px" width="100%">
-            <Box mb="25px">
+            <Box
+              mb="25px"
+              component={motion.div}
+              animate={{ x: [0, 50, 0] }}
+              initial={{ x: -50 }}
+              transition={{ ease: 'easeOut', duration: 1, times: [0, 0.2, 1] }}
+            >
               <Title>{t('movies.list.titleNovelty')}</Title>
             </Box>
-            <MovieCard
-              title={movies[8].getTitle()}
-              img={movies[8].getBackdropPath()}
-              aspectRatio="16/6"
-            />
+            <motion.div
+              animate={{ x: 0 }}
+              initial={{ x: -100 }}
+              transition={{ ease: 'easeOut', duration: 0.7 }}
+            >
+              <MovieCard
+                title={movies[0].getTitle()}
+                img={movies[0].getBackdropPath()}
+                aspectRatio="16/6"
+              />
+            </motion.div>
           </Box>
         )}
         <Box mt="25px" mb="25px" width="100%">
@@ -64,7 +77,7 @@ const MoviesListFacade = () => {
                   setValue={setSearchValue}
                   sx={{
                     mr: '15px',
-                    backgroundColor: '#FF7373',
+                    backgroundColor: '#1D7373',
                     borderRadius: '10px',
                   }}
                 />
@@ -85,15 +98,15 @@ const MoviesListFacade = () => {
             <Grid container spacing={3}>
               <Grid item xs={6}>
                 <MovieCard
-                  title={movies[4].getTitle()}
-                  img={movies[4].getBackdropPath()}
+                  title={movies[0].getTitle()}
+                  img={movies[0].getBackdropPath()}
                   aspectRatio="3/2"
                 />
               </Grid>
               <Grid item xs={6}>
                 <MovieCard
-                  title={movies[3].getTitle()}
-                  img={movies[3].getBackdropPath()}
+                  title={movies[0].getTitle()}
+                  img={movies[0].getBackdropPath()}
                   aspectRatio="3/2"
                 />
               </Grid>

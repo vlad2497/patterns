@@ -4,7 +4,7 @@ import Select from '@mui/material/Select'
 export const StyledSelect = styled(Select)(() => ({
   width: '120px',
   height: '56px',
-  backgroundColor: '#FF7373',
+  backgroundColor: '#1D7373',
   borderRadius: '10px',
   '&:focused': {},
 
