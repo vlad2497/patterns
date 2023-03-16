@@ -9,10 +9,7 @@ export const store = configureStore({
     [genresApi.reducerPath]: genresApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false }).concat(
-      moviesApi.middleware,
-      genresApi.middleware
-    ),
+    getDefaultMiddleware().concat(moviesApi.middleware, genresApi.middleware),
 })
 
 type RootState = ReturnType<typeof store.getState>

@@ -1,6 +1,23 @@
 import { useEffect, useState } from 'react'
 import { MovieListItemModel } from 'store/slices/movie/types'
-import { MovieFilter } from './movie-filter'
+
+const filterByGenre = (
+  movies: MovieListItemModel[],
+  genreId: string
+): MovieListItemModel[] => {
+  return genreId === ''
+    ? movies
+    : movies.filter((movie) => movie.genreIds.includes(+genreId))
+}
+
+const filterBySearch = (
+  movies: MovieListItemModel[],
+  searchValue: string
+): MovieListItemModel[] => {
+  return searchValue === ''
+    ? movies
+    : movies.filter((movie) => movie.title.includes(searchValue))
+}
 
 type Props = {
   genre: string
@@ -14,10 +31,9 @@ const useMoviesFilter = ({ genre, search, movies }: Props) => {
 
   useEffect(() => {
     if (movies.length) {
-      let localFilteredMovies: MovieListItemModel[] = []
-      localFilteredMovies = new MovieFilter(movies).filterByGenre(genre)
-      localFilteredMovies = new MovieFilter(localFilteredMovies).filterBySearch(
-        search
+      const localFilteredMovies = filterByGenre(
+        filterBySearch(movies, search),
+        genre
       )
       setFilteredMovies(localFilteredMovies)
     }
