@@ -6,6 +6,17 @@ export const DEFAULT_QUERY_PARAMS = {
   language: API_LANGUAGE,
 }
 
+export type Error = {
+  data: {
+    message: string
+  }
+  status: number
+}
+
 export const baseQuery = fetchBaseQuery({
   baseUrl: `${API_V3_HOST}/`,
+  prepareHeaders: (headers) => {
+    // headers.set('Test', '123')
+    return headers
+  },
 })

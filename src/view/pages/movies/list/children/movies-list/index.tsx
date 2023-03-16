@@ -1,9 +1,9 @@
 import Grid from '@mui/material/Grid'
-import { MovieModel } from 'store/slices/movie/models'
+import { MovieListItemModel } from 'store/slices/movie/types'
 import MovieCard from './children/movie-card'
 
 type Props = {
-  movies: MovieModel[]
+  movies: MovieListItemModel[]
 }
 
 const MoviesList = ({ movies }: Props) => {
@@ -11,10 +11,10 @@ const MoviesList = ({ movies }: Props) => {
     <div data-testid="popular-movies-list">
       <Grid container spacing={3}>
         {movies.map((movie) => (
-          <Grid item xs={3} key={movie.getId()}>
+          <Grid item xs={3} key={movie.id}>
             <MovieCard
-              title={movie.getTitle()}
-              img={movie.getImageSrc()}
+              title={movie.title}
+              img={movie.backdropPath}
               aspectRatio="2/3"
             />
           </Grid>

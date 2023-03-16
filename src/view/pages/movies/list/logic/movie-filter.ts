@@ -1,21 +1,21 @@
-import { MovieModel } from 'store/slices/movie/models'
+import { MovieListItemModel } from 'store/slices/movie/types'
 
 export class MovieFilter {
-  private list: MovieModel[]
+  private list: MovieListItemModel[]
 
-  constructor(list: MovieModel[]) {
+  constructor(list: MovieListItemModel[]) {
     this.list = [...list]
   }
 
-  filterByGenre(genreId: string): MovieModel[] {
+  filterByGenre(genreId: string): MovieListItemModel[] {
     return genreId === ''
       ? this.list
-      : this.list.filter((movie) => movie.getGenreIds().includes(+genreId))
+      : this.list.filter((movie) => movie.genreIds.includes(+genreId))
   }
 
-  filterBySearch(searchValue: string): MovieModel[] {
+  filterBySearch(searchValue: string): MovieListItemModel[] {
     return searchValue === ''
       ? this.list
-      : this.list.filter((movie) => movie.getTitle().includes(searchValue))
+      : this.list.filter((movie) => movie.title.includes(searchValue))
   }
 }

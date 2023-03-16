@@ -1,8 +1,7 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
 import { baseQuery, DEFAULT_QUERY_PARAMS } from 'store/api'
-import { GenreType } from './types'
-import { GenreModel } from './models'
-import { GenreFactory } from './factories'
+import { GenreAPI, GenreModel } from './types'
+import { createGenreModel } from './models'
 
 export const genresApi = createApi({
   reducerPath: 'genresApi',
@@ -13,10 +12,9 @@ export const genresApi = createApi({
         url: `genre/movie/list`,
         params: DEFAULT_QUERY_PARAMS,
       }),
-      transformResponse: (response: { genres: GenreType[] }) => {
-        const genreFactory = new GenreFactory()
+      transformResponse: (response: { genres: GenreAPI[] }) => {
         return Array.isArray(response?.genres)
-          ? response.genres.map((genre) => genreFactory.create(genre))
+          ? response.genres.map((genre) => createGenreModel(genre))
           : []
       },
     }),

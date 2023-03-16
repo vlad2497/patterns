@@ -60,8 +60,8 @@ const MoviesListFacade = () => {
               transition={{ ease: 'easeOut', duration: 0.7 }}
             >
               <MovieCard
-                title={movies[0].getTitle()}
-                img={movies[0].getBackdropPath()}
+                title={movies[0].title}
+                img={movies[0].backdropPath}
                 aspectRatio="16/6"
               />
             </motion.div>
@@ -98,15 +98,15 @@ const MoviesListFacade = () => {
             <Grid container spacing={3}>
               <Grid item xs={6}>
                 <MovieCard
-                  title={movies[0].getTitle()}
-                  img={movies[0].getBackdropPath()}
+                  title={movies[0].title}
+                  img={movies[0].backdropPath}
                   aspectRatio="3/2"
                 />
               </Grid>
               <Grid item xs={6}>
                 <MovieCard
-                  title={movies[0].getTitle()}
-                  img={movies[0].getBackdropPath()}
+                  title={movies[0].title}
+                  img={movies[0].backdropPath}
                   aspectRatio="3/2"
                 />
               </Grid>

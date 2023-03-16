@@ -1,12 +1,11 @@
 import { FC } from 'react'
 import { IMAGES_HOST, MOCKER } from 'config/api'
-import { MovieModel } from 'store/slices/movie/models'
-import PortretImgMock from 'assets/images/mocks/portret.jpg'
+import PortretImgMock from 'assets/images/mocks/portret.webp'
 import { Title, Wrapper } from './styles'
 
 type Props = {
-  title: MovieModel['title']
-  img: MovieModel['imageSrc']
+  title: string
+  img: string
   aspectRatio: string
 }
 

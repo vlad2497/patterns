@@ -12,8 +12,8 @@ const GenreSelect: FC<Props> = ({ value, setValue }) => {
   const { isLoading: isGenresLoading, data: genres } = useGetGenresListQuery()
 
   const genreMenu = genres?.map((genre) => (
-    <MenuItem key={genre.getName()} value={genre.getId()}>
-      {genre.getName()}
+    <MenuItem key={genre.name} value={genre.id}>
+      {genre.name}
     </MenuItem>
   ))
 
