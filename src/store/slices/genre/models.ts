@@ -1,4 +1,4 @@
-import { typesValidator } from 'models/types-validator'
+import { typesValidator } from 'utils/types-validator'
 import { GenreAPI, GenreModel } from './types'
 
 export function createGenreModel(movieData: GenreAPI): GenreModel {

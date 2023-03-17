@@ -1,4 +1,4 @@
-import Content from 'view/components/content'
+import Content from 'layouts/content'
 import { Wrapper, StyledLogo } from './styles'
 
 const Footer = () => {

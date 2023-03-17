@@ -1,5 +1,5 @@
 import { Routes } from 'react-router-dom'
-import moviesRouter from 'view/pages/movies/router'
+import moviesRouter from 'pages/movies/router'
 
 // eslint-disable-next-line no-console
 console.log('version ', process.env.REACT_APP_VERSION)

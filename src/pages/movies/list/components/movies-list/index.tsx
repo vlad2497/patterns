@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid'
 import { MovieListItemModel } from 'store/slices/movie/types'
-import MovieCard from './children/movie-card'
+import MovieCard from './movie-card'
 
 type Props = {
   movies: MovieListItemModel[]

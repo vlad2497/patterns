@@ -1,4 +1,4 @@
-import { typesValidator } from 'models/types-validator'
+import { typesValidator } from 'utils/types-validator'
 import { MovieListItemAPI, MovieListItemModel } from './types'
 
 export function createMovieListItemModel(
